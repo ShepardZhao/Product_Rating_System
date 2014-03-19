@@ -1,0 +1,23 @@
+
+package week3_homework;
+import static java.lang.System.*;
+import java.util.*;
+
+
+public class week3_homework_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int N=Integer.parseInt(args[0]); 
+		
+		for(int i=1;i<=N;i++)       
+		{
+		        for(int j=0;j<N-i;j++)out.print(" ");
+		        for(int j=0;j<(2*i-1);j++) out.print("*");
+		        out.println();
+		}
+		
+		
+	}
+
+}

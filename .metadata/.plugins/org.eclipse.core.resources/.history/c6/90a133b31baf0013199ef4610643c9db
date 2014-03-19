@@ -1,0 +1,51 @@
+package week3_homework;
+
+
+
+
+class GameSetting{
+	
+	private String scissors;
+	private String paper;
+	private String rock;
+	private String lizard;
+	private String Spock;
+	
+	//constructor
+	GameSetting(){
+		
+		
+		
+	}
+	
+	
+	
+	//condition
+	
+	//condition return 
+	String GetResult(String value){
+		return value;
+	}
+	
+	
+	
+}
+
+
+class People extends GameSetting{
+	
+	
+	
+	
+}
+
+
+
+public class Rock_Paper_Scissors_Lizard_Spock {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

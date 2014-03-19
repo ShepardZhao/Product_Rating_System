@@ -1,0 +1,86 @@
+package week3_homework;
+import java.util.*;
+
+import static java.lang.System.*;
+
+
+
+class GameSetting{
+	
+	final private String[] store = {"scissors","paper","rock","lizard","Spock"};
+	private  HashMap<String, Integer> hasmap = new HashMap<String, Integer>();
+	private List<Integer> list = new ArrayList<Integer>(); 
+	private String input;
+	
+	//constructor
+	GameSetting(){
+		Setolist();//set random string
+		Setmatch();//set match
+	}
+	
+	
+	
+	//set to list
+	private void Setolist(){
+		int i = new Random().nextInt(store.length); 
+		for(; list.size() != store.length; i = new Random().nextInt(store.length)) { 
+		if(!list.contains(i)) { 
+		list.add(i); 
+		} 
+		} 
+		
+	}	
+	//set match
+	private void Setmatch(){
+		for(int i=0;i<list.size();i++){
+			hasmap.put(store[list.get(i)], i);	
+		}
+	}
+	
+	
+	
+	//get map
+	void GetMap(){
+		for (Map.Entry<String, Integer> entry : hasmap.entrySet()) {
+		    String key = entry.getKey();
+		    Integer value = entry.getValue();
+		    out.print(key + ": " +value);
+		}
+	}
+	
+	
+	//set user input 
+	void SetUserInput(String input){
+		this.input=input;
+	}
+	
+	
+	
+	
+	
+	
+}
+
+
+class People extends GameSetting{
+	
+	
+	
+	
+}
+
+
+
+public class Rock_Paper_Scissors_Lizard_Spock {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		GameSetting gameSetting = new GameSetting();  
+		gameSetting.SetUserInput(args[0]);
+		
+		gameSetting.GetMap();
+		
+	}
+
+}

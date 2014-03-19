@@ -1,0 +1,73 @@
+package week3_homework;
+import java.util.*;
+
+import static java.lang.System.*;
+
+
+
+class GameSetting{
+	
+	final private String[] store = {"scissors","paper","rock","lizard","Spock"};
+	private List<Integer> list = new ArrayList<Integer>(); 
+
+	
+	
+	
+	//constructor
+	GameSetting(){
+		
+		int i = new Random().nextInt(s.length); 
+		for(; list.size() != store.length; i = new Random().nextInt(store.length)) { 
+		if(!list.contains(i)) { 
+		System.out.print(store[i]+" "); 
+		list.add(i); 
+		} 
+		} 
+	}
+	
+	
+	
+	
+	
+	
+	//condition
+	
+	//condition return 
+	String GetResult(String value){
+		return value;
+	}
+	
+	
+	//get map
+	void GetMap(){
+		for (Map.Entry<String, Integer> entry : Hashmap.entrySet()) {
+		    String key = entry.getKey();
+		    Integer value = entry.getValue();
+		    out.print(key + ": " +value);
+		}
+	}
+	
+	
+}
+
+
+class People extends GameSetting{
+	
+	
+	
+	
+}
+
+
+
+public class Rock_Paper_Scissors_Lizard_Spock {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		GameSetting gameSetting = new GameSetting();  
+		gameSetting.GetMap();
+		
+	}
+
+}

@@ -1,0 +1,99 @@
+package week3_homework;
+import java.util.*;
+
+import static java.lang.System.*;
+
+class Rules{
+	
+	protected String GetCondiiton(String userinput, String computerInput){
+		if(userinput.equals(computerInput)){//if usrinput and computerinputer are same then return draw
+			return "draws";
+		}
+		else if(ReturnWinOnly(userinput,computerInput)){
+			return "wins";
+		}
+		else{
+			return "loses";
+		}
+
+	}
+
+	
+	
+	private boolean ReturnWinOnly(String user, String computer){
+		if(user.equals("rock") && (computer.equals("scissors") || computer.equals("lizard") )){
+			return true;
+		}
+		else if(user.equals("paper") && (computer.equals("rock") || computer.equals("Spock") )){
+			return true;
+		}
+		else if(user.equals("scissors") && (computer.equals("paper") || computer.equals("lizard") )){
+			return true;
+		}
+		else if(user.equals("lizard") && (computer.equals("paper") || computer.equals("spock") )){
+			return true;
+		}
+		else if(user.equals("spock") && (computer.equals("scissors") || computer.equals("rock") )){
+			return true;
+		}
+		else{return false;}
+			
+	}
+	
+	
+	
+}
+
+class GameSetting extends Rules{
+	
+	final private String[] store = {"scissors","paper","rock","lizard","Spock"};
+	//private  HashMap<String, Integer> hasmap = new HashMap<String, Integer>();
+	//private List<Integer> list = new ArrayList<Integer>(); 
+	private String input;
+	private String computerInput;
+	
+	//constructor
+	GameSetting(){
+		Setolist();//set random string
+	}
+	
+	
+	
+	//set to list
+	private void Setolist(){
+		int i = new Random().nextInt(store.length); 
+		this.computerInput=store[i];
+		
+	}	
+	
+	
+	//set user input 
+		void SetUserInput(String input){
+			this.input=input.toLowerCase();
+		}
+		
+		
+	//display the result
+		
+		void Display(){	
+			out.println("User given: " + this.input);
+			out.println("Computer given: " + this.computerInput);
+			out.println("The result: "+ GetCondiiton(this.input,this.computerInput));
+		}
+		
+}
+
+
+
+public class Rock_Paper_Scissors_Lizard_Spock {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//set game initialization, such as given the match randomly 
+		GameSetting gameSetting = new GameSetting();  
+		gameSetting.SetUserInput(args[0]);
+		gameSetting.Display();
+		
+	}
+
+}

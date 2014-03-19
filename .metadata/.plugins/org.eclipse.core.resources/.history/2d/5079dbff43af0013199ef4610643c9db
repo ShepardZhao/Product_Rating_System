@@ -1,0 +1,36 @@
+
+/**
+* This program is the homework of week3, and it is called Pyramid
+* @author  xun zhao
+* @version 1.0
+* @since   2014-03-19
+*/
+package week3_homework;
+import static java.lang.System.*;
+
+
+public class week3_Pyramid {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+        int N = Integer.parseInt(args[0]);
+        
+		for(int i=1;i<=N;i++)       
+		{
+		       if(i%2!=0){
+			       // out.print(i+" ");
+		    	   for(int j=0;j<N-i;j++)
+		    		   out.print(" ");
+			        for(int j=0;j<i;j++) 
+			        	out.print("* ");
+	
+			        out.println();
+			        
+		       }
+		}
+		
+		
+	}
+
+}

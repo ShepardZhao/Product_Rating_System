@@ -1,0 +1,33 @@
+
+package week3_homework;
+import static java.lang.System.*;
+import java.util.*;
+
+
+public class week3_homework_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input=new Scanner(System.in);
+        out.print("Enter N: ");
+        int N=input.nextInt();
+        
+		for(int i=1;i<=N;i++)       
+		{
+		       if(i%2!=0){
+			        out.print(i+" ");
+		    	   for(int j=0;j<N-i;j++)
+		    		   out.print(" ");
+			        for(int j=0;j<(2*i-i);j++) 
+			        	out.print("*");
+			        for(int j=0;j<N-i;j++)
+			    		   out.print(" ");
+			        out.println();
+			        
+		       }
+		}
+		
+		
+	}
+
+}

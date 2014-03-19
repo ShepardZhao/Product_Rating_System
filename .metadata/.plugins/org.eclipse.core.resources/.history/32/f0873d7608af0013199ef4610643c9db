@@ -1,0 +1,15 @@
+import static java.lang.System.*;
+import java.util.*;
+
+package week3_homework;
+
+
+
+public class week3_homework_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

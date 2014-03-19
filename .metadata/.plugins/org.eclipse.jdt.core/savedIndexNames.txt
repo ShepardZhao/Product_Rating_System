@@ -1,0 +1,23 @@
+INDEX VERSION 1.126+/Users/zhaoxun321/University of Sydney/COMP5347/Assignment1/Product_Rating_System/.metadata/.plugins/org.eclipse.jdt.core
+3590087804.index
+4127484679.index
+3833886695.index
+1244548586.index
+2030877447.index
+2239646037.index
+130158608.index
+3667553991.index
+2735847511.index
+1535079095.index
+125590461.index
+3958092563.index
+2301014344.index
+1280069287.index
+3274410981.index
+654596180.index
+213788008.index
+2475288563.index
+2188983584.index
+3241765704.index
+2724262402.index
+1049236043.index
