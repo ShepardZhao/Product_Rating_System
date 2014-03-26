@@ -1,0 +1,141 @@
+package com.Controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import javax.servlet.http.*;
+
+
+
+public class RatingController extends SessionCookieController{
+	private int Rating;
+	private String ProID;
+	private HttpServletRequest request;
+	private  HttpServletResponse response;
+	private final int count =1;  
+	private final int[] Ratinghistogram = {1,2,3,4,5};
+	private HashMap<Integer,Integer> hmap = new HashMap<Integer,Integer>();//histogram only
+	private HashMap<String,HashMap<Integer,Integer>> pid_map = new HashMap<String,HashMap<Integer,Integer>>();// combine histogram and its production id together
+	//constructor
+	
+	public RatingController(HttpSession session,HttpServletRequest request, HttpServletResponse response, String ProID, String RatingType){
+		super(session);
+		this.request=request;
+		this.response =response;
+		this.ProID = ProID;
+		this.Rating = Integer.parseInt(RatingType);
+	}
+	
+	
+
+	
+
+	//set global session
+	public HashMap<String,HashMap<Integer,Integer>> SetGobalSession(HashMap<String,HashMap<Integer,Integer>> result){
+
+		if(result==null){// if current session is empty
+			return this.ReturnProIDAndRatinghistogram();
+		}
+		else{
+			return this.ReturntmpHashMap(result);
+		}
+		
+	}
+	
+	
+	private HashMap<String,HashMap<Integer,Integer>> ReturntmpHashMap(HashMap<String,HashMap<Integer,Integer>> name){
+		HashMap<String,HashMap<Integer,Integer>> tmpHashMap	= name;//get cookie from session
+		if(tmpHashMap.containsKey(this.ProID)){
+			//if current root hashmap key is exist   
+			int getvalue = tmpHashMap.get(this.ProID).get(this.Rating);
+			tmpHashMap.get(this.ProID).put(this.Rating, getvalue+this.count);
+				
+		}
+		else{//if current production id is not match
+			tmpHashMap=this.loopHashMap(tmpHashMap);
+			tmpHashMap.putAll(this.ReturnProIDAndRatinghistogram());
+		}
+		return tmpHashMap;	
+	}
+	
+	
+	
+	//loop hashmap from session
+	private HashMap<String,HashMap<Integer,Integer>> loopHashMap(HashMap<String,HashMap<Integer,Integer>> hashmap){
+		HashMap<String,HashMap<Integer,Integer>> tmp = new HashMap<String,HashMap<Integer,Integer>>();
+		for (String key : hashmap.keySet()) {
+				tmp.put(key, hashmap.get(key));
+			}
+
+		return tmp;
+	}
+	
+	
+	
+	
+	
+	//put proID with its rating histogram in a hashmap
+	private HashMap<String,HashMap<Integer,Integer>> ReturnProIDAndRatinghistogram(){
+		pid_map.put(this.ProID,this.ReturnRatinghistogram());
+		return pid_map;
+	}
+	
+	
+	
+	//return rating histogram map only
+	private  HashMap<Integer,Integer> ReturnRatinghistogram(){
+		
+		for (int x=0; x<Ratinghistogram.length;x++){
+			if(Ratinghistogram[x] == this.Rating){
+				this.hmap.put(Ratinghistogram[x],count);
+			}
+			else
+			{
+				this.hmap.put(Ratinghistogram[x],0);
+			}	
+		}
+		return this.hmap;
+	}
+
+	
+	
+		
+	
+	//set average voting
+	void SetAverageVoting(){
+		
+		
+	}
+	
+	
+	
+	
+	//get average voting
+	String[] GetAverageVoting(){
+		
+		
+		
+		
+		return null;
+	}
+	
+	
+	
+	public void displayEmptyRating(){
+		 	response.setContentType("text/html");
+	        PrintWriter printWriter  = response.getWriter();
+	        printWriter.println("<li>Rate 1: 0</li>");
+	        printWriter.println("<li>Rate 2: 0</li>");
+	        printWriter.println("<li>Rate 3: 0</li>");
+	        printWriter.println("<li>Rate 4: 0</li>");
+	        printWriter.println("<li>Rate 5: 0</li>");
+
+
+	}
+	
+	
+	
+}

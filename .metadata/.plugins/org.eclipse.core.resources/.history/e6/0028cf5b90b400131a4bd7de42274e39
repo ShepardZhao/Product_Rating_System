@@ -1,0 +1,47 @@
+import java.util.*;
+import static java.lang.System.*;
+
+class TwoDimensional{
+	private final int row_x;
+	private final int row_y;
+	private int sum_col=0;
+	private int sum_row=0;
+	private int[][] array;
+	TwoDimensional(int row_x, int row_y){
+		this.row_x = row_x;
+		this.row_y = row_y;
+		this.array = new int[this.row_x][this.row_y];
+	}
+	
+	private int ReturnColSum(){
+		
+		for (int i=0;i<this.array.length;i++){
+			this.sum_col+=this.array[i][this.row_y];
+		}
+		
+		
+	}
+	
+	
+	private int ReturRowSum(){
+		
+	}
+	
+	public void FinalResult(){
+		out.println("The sum of col is: " +this.ReturnColSum());
+		out.println("The sum of row is: " +this.ReturRowSum());
+	}
+	
+	
+	
+	
+}
+
+public class ColumnandRowSums {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			
+	}
+
+}

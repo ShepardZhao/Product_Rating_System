@@ -1,0 +1,35 @@
+import java.util.*;
+import static java.lang.System.*;
+
+class TwoDimensional{
+	private final int row_x;
+	private final int row_y;
+	private int[][] array;
+	TwoDimensional(int row_x, int row_y){
+		this.row_x = row_x;
+		this.row_y = row_y;
+		this.array = new int[this.row_x][this.row_y];
+	}
+	
+	private ReturnColSum(){
+		
+	}
+	
+	
+	private ReturRowSum(){
+		
+	}
+	
+	
+	
+	
+}
+
+public class ColumnandRowSums {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			
+	}
+
+}

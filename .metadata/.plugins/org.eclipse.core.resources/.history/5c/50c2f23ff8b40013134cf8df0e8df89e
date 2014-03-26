@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">  
+   <servlet>
+      <servlet-name>InitalPage</servlet-name>
+      <servlet-class>com.Content.InitalPage</servlet-class>   
+    
+    
+    <init-param>   
+        <param-name>ProductList</param-name>   
+        <param-value>1,Samsung Galaxy S5 4G LTE SM-G900,$722.00,samsung-galaxy-s5.jpg,Black,Qualcomm 2.5GHz quad-core processor,3GB,32GB;2,Sony Xperia SP C5302 (White),$633.99,sony-xperia-sp-c5303-white.jpg,White,Andriod 4.2,2.2GHz quad-core processor,1GB,8GB;3,Samsung Galaxy S4 4G LTE i9506 (16GB-White),$534.00,samsung-galaxy-s4.jpg,White,Andriod 4.2,Dual-core 1.7 GHz Krait,2GB,16GB;4,Apple iPhone 5c (16GB-White),$675.00,apple-iphone-5c.jpg,Black,IOS7.1,Apple A6,2GB,32GB;5,LG Google Nexus 5 D821 (16GB-Black),$429,lg-google-nexus-5-d821-16gb-black.jpg,Black,Quad-core 2.3 GHz Krait 400,2GB,16GB;6,Nokia Lumia 1020 4G LTE (32GB-White),$599,nokia-lumia-1020-4g-lte-32gb-white.jpg,White,Dual-core 1.5 GHz Krait,2GB,32GB;</param-value>
+    </init-param>    
+    
+  </servlet>
+  
+  
+  
+<servlet-mapping>
+    <servlet-name>InitalPage</servlet-name>
+    <url-pattern>/ProductionList</url-pattern>   
+</servlet-mapping>
+
+  <servlet>
+      <servlet-name>DetailPage</servlet-name>
+      <servlet-class>com.Content.DetailPage</servlet-class>   
+  </servlet>   
+  
+    
+<servlet-mapping>
+    <servlet-name>DetailPage</servlet-name>
+    <url-pattern>/Details</url-pattern>   
+</servlet-mapping>
+  
+  
+<session-config>  
+     <session-timeout>30</session-timeout>  
+</session-config>  
+
+
+  <display-name>Product_Rating_System</display-name>
+  <welcome-file-list>
+    <welcome-file>/ProductionList</welcome-file>
+  </welcome-file-list>
+  
+</web-app>

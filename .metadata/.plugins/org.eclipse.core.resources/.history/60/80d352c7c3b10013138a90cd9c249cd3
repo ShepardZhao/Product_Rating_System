@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="org.json.simple.*"%>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<title>COMP5347 Assignment 1</title>
+	
+	<!-- If you are using CSS version, only link these 2 files, you may add app.css to use for your overrides if you like. -->
+  	<link rel="stylesheet" href="css/normalize.css">
+  	<link rel="stylesheet" href="css/foundation.min.css">
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+  	<script src="js/vendor/jquery.js"></script>
+  	<script src="js/vendor/modernizr.js"></script>
+  	<script src="js/foundation/foundation.js"></script>
+  	<script src="js/foundation/foundation.reveal.js"></script>
+  	<script src="js/customer.js"></script>
+  	
+</head>
+<body>
+<script type="text/javascript"> 
+    $(document).foundation();
+</script>
+
+ 
+
+
+
+

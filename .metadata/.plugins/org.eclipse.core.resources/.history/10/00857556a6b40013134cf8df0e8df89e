@@ -1,0 +1,33 @@
+import java.util.*;
+
+import static java.lang.System.*;
+
+class Spot{
+	private String getString;
+	private String C_regEx="^[A-Z]+$"; 
+	
+	public Spot(String string) {
+		this.getString = string;	
+	}
+
+	
+
+	char charAt(int index){
+		
+	}
+
+	
+}
+
+
+public class CaseSeninput {
+
+	public static void main(String[] args) {
+		Spot spot = new Spot(args[0]);
+		
+		
+		
+		
+	}
+
+}

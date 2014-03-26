@@ -8,6 +8,6 @@
 </listAttribute>
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="week3_homework.Rock_Paper_Scissors_Lizard_Spock"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="scissors"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="paper"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="week3_homework"/>
 </launchConfiguration>

@@ -1,0 +1,32 @@
+import java.util.*;
+
+import static java.lang.System.*;
+
+class Spot{
+	private String getString;
+	public Spot(String string) {
+		this.getString = getString;	
+	}
+
+	private String
+	
+
+	char charAt(int index){
+		
+	}
+
+	
+}
+
+
+public class CaseSeninput {
+
+	public static void main(String[] args) {
+		Spot spot = new Spot(args[0]);
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,103 @@
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static java.lang.System.*;
+
+class Spot{
+	private String getString;
+	private final String C_regEx="^[A-Z]+$"; //
+	private final String S_regEx="^[a-z]+$";
+	private Map<String, Integer> C_map = new HashMap<String, Integer>();
+	private Map<String, Integer> S_map = new HashMap<String, Integer>();
+
+	public Spot(String string) {
+		this.getString = string;	
+		this.Execute();
+	}
+
+	
+	
+	
+
+	private void Execute(){
+		Pattern p_c=Pattern.compile(C_regEx);
+		Pattern p_s=Pattern.compile(S_regEx);
+
+		
+		char[] tmp = this.charAt();
+
+		for (int x=0; x<tmp.length;x++){
+			Matcher m=p_c.matcher(Character.toString(tmp[x]));
+			if(m.find()){
+				this.IncreaseNumber(C_map, Character.toString(tmp[x]));
+			}
+		}
+		
+		for (int i=0;i<tmp.length;i++){
+			Matcher m=p.matcher(Character.toString(tmp[i]));
+			if(m.find()){
+				this.IncreaseNumber(S_map, Character.toString(tmp[i]));
+			}	
+		}	
+	} 
+	
+	
+	
+	
+	private void IncreaseNumber(Map<String, Integer> map, String getstring){
+		if(map.containsKey(getstring)){
+			map.put(getstring, map.get(getstring)+1);
+		}
+		else{
+			map.put(getstring,1);
+		}
+	}
+	
+	
+	
+	//return to char array
+	private char[] charAt(){
+		return this.getString.toCharArray();
+	}
+
+	
+	
+	public void display(){
+		Iterator iterator_c = this.C_map.entrySet().iterator();
+		Iterator iterator_s = this.S_map.entrySet().iterator();
+
+		
+			while (iterator_c.hasNext()) {
+				Map.Entry mapEntry = (Map.Entry) iterator_c.next();
+				System.out.println("The Captial word is " + mapEntry.getKey()
+					+ ",count is :" + mapEntry.getValue());
+			}
+			
+			while (iterator_s.hasNext()) {
+				Map.Entry mapEntry = (Map.Entry) iterator_s.next();
+				System.out.println("The Small word is " + mapEntry.getKey()
+					+ ",count is :" + mapEntry.getValue());
+			}
+			
+		
+		
+		
+	}
+	
+	
+	
+}
+
+
+public class CaseSeninput {
+
+	public static void main(String[] args) {
+		Spot spot = new Spot(args[0]);
+		spot.display();
+		
+		
+		
+	}
+
+}

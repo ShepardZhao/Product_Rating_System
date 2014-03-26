@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>Product_Rating_System</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+   <servlet>
+      <servlet-name>InitalPage</servlet-name>
+      <servlet-class>com.Content.InitalPage</servlet-class>   
+      <init-param>   
+        <param-name>ProductListId</param-name>   
+        <param-value>1,2,3,4</param-value>
+    </init-param>   
+    
+    <init-param>   
+        <param-name>ProductListName</param-name>   
+        <param-value>Samsung Galaxy S5 4G LTE SM-G900,Sony Xperia SP C5302 (White),Samsung Galaxy S4 4G LTE i9506 (16GB-White),Apple iPhone 5c (16GB-White)</param-value>
+    </init-param> 
+    
+    
+    <init-param>   
+        <param-name>ProductListPrice</param-name>   
+        <param-value>$722.00,$633.99,$534.00,$675.00</param-value>
+    </init-param> 
+    
+    
+    <init-param>   
+        <param-name>ProductListImage</param-name>   
+        <param-value>samsung-galaxy-s5.jpg,sony-xperia-sp-c5303-white.jpg,samsung-galaxy-s4.jpg,apple-iphone-5c.jpg</param-value>
+    </init-param> 
+    
+    
+    <init-param>   
+        <param-name>ProductListColor</param-name>   
+        <param-value>Black,White,White,Black</param-value>
+    </init-param> 
+    
+    
+     
+    <init-param>   
+        <param-name>ProductListOS</param-name>   
+        <param-value>Andriod 5.0,Andriod 4.2,Andriod 4.3,IOS 7.1</param-value>
+    </init-param> 
+    
+    
+      
+    <init-param>   
+        <param-name>ProductListProcessor</param-name>   
+        <param-value>Qualcomm 2.5GHz quad-core processor,2.2GHz quad-core processor,Dual-core 1.7 GHz Krait,Apple A6</param-value>
+    </init-param> 
+    
+    
+    <init-param>   
+        <param-name>ProductListMemory</param-name>   
+        <param-value>3GB,1GB,2GB,2GB</param-value>
+    </init-param> 
+    
+     
+    <init-param>   
+        <param-name>ProductListStorage</param-name>   
+        <param-value>32GB,8GB,16GB,32GB</param-value>
+    </init-param> 
+    
+    
+   <load-on-startup>1</load-on-startup>
+    
+  </servlet>
+  
+  
+  
+<servlet-mapping>
+    <servlet-name>InitalPage</servlet-name>
+    <url-pattern>/ProductionList</url-pattern>   
+</servlet-mapping>
+
+  
+  
+  
+  
+</web-app>

@@ -1,0 +1,84 @@
+import java.util.*;
+
+import static java.lang.System.*;
+
+class TwoDimensional{
+	private int sum_row;
+	private int[][] array;
+	TwoDimensional(){
+		
+	}
+	
+	
+	
+	public void SetValueForArray(int value){
+		for (int x=0;x<this.array.length;x++){
+			
+			
+		}
+		
+		
+	}
+	
+	public void ShowColSum(){
+		for (int row=0;row<this.array.length;row++){
+			this.sum_row=0;
+			for(int col=0;col<this.array[row].length;col++){
+				this.sum_row+=this.array[row][col];
+			}
+		
+			out.println("The sum of this row: " + (row+1)+"is: "+ this.sum_row);
+		}
+		
+	}
+	
+	
+	public void ShowRowSum(){
+		
+		
+		
+	}
+
+	
+	
+}
+
+public class ColumnandRowSums {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[] tmp;
+		Scanner ob=new Scanner(System.in);
+		out.println("Enter the row number: ");
+		int row=ob.nextInt();
+		out.println("Enter the col number: ");
+		int col=ob.nextInt();
+		int[][] array_2d = new int[row][col];
+		
+		TwoDimensional twoDimensional = new TwoDimensional();
+		
+		for (int x=0; x<row;x++){
+			
+			for (int i=0;i<col;i++){
+				out.println("Enter the value: ");
+
+				array_2d[x][i]= ob.nextInt();
+
+			}
+		}
+		
+
+		
+		
+		
+		
+			
+		
+		
+	
+		
+		
+	}
+
+}

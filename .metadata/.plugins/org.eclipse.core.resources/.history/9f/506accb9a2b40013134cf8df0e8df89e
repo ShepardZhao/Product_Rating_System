@@ -1,0 +1,79 @@
+import java.util.*;
+
+import static java.lang.System.*;
+
+class TwoDimensional{
+	private int sum_row =0;
+	private int sum_col=0;
+	private int[][] array;
+	TwoDimensional(int[][] array){
+		this.array = array;
+	}
+	
+	
+	
+	public void ShowColSum(){
+		for (int row =0; row<this.array.length;row++){
+			for (int col=0;col<this.array[row].length;col++){
+				sum_col += this.array[col][row];
+
+			}
+			
+		      System.out.println("the sum for col "+(row+1)+" is: "+sum_col  );//made the row +1, to make it understandable
+
+		}
+		
+	}
+	
+	
+	public void ShowRowSum(){
+		 for ( int row=0; row < array.length; row++)
+		    {
+		      // compute the sum for this row
+		      for ( int col=0; col < array[row].length; col++)
+		      {
+		    	  sum_row+=array[row][col];
+		      }
+
+		      // write the sum for this row
+		      System.out.println("the sum for row "+(row+1)+" is: "+sum_row  );//made the row +1, to make it understandable
+		    }
+		
+		
+	}
+
+	
+	
+}
+
+public class ColumnandRowSums {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int[] tmp;
+		Scanner ob=new Scanner(System.in);
+		out.println("Enter the row number: ");
+		int row=ob.nextInt();
+		out.println("Enter the col number: ");
+		int col=ob.nextInt();
+		int[][] array_2d = new int[row][col];
+				
+		for (int x=0; x<row;x++){
+			
+			for (int i=0;i<col;i++){
+				out.println("Current is row : " + x + " and the col is " + i + ", please input value for currnet array");
+				array_2d[x][i]= ob.nextInt();
+
+			}
+		}
+		
+		
+		TwoDimensional twoDimensional = new TwoDimensional(array_2d);
+			
+		twoDimensional.ShowRowSum();
+		twoDimensional.ShowColSum();
+		
+	}
+
+}

@@ -1,0 +1,75 @@
+import java.util.*;
+import static java.lang.System.*;
+
+class GeneratePascaltriangle {
+	private final int row;
+	private int[][] pascalT;
+	
+	GeneratePascaltriangle(int getrow){
+		this.row = getrow;
+		this.pascalT = new int[this.row+1][];
+	}
+
+	
+	
+	
+	//generate first row
+	
+	private void GenerateFirstRow(){
+		this.pascalT[1] = new int[3];
+		this.pascalT[1][1] =1;
+	}
+	
+	//put pascal into triangle
+	private void PInTriangle(){
+		for (int i = 2; i <= row; i++) {
+            this.pascalT[i] = new int[i + 2];
+            for (int j = 1; j < this.pascalT[i].length - 1; j++)
+                this.pascalT[i][j] = this.pascalT[i-1][j-1] + this.pascalT[i-1][j];
+        }	
+	}
+	
+	
+	
+	//get result
+	private void getResult(){
+		
+		  for (int i = 1; i <= row; i++) {
+	            for (int j = 1; j < this.pascalT[i].length - 1; j++) {
+	               out.print(this.pascalT[i][j] + " ");
+	            }
+	            out.println();
+	        }
+		
+	}
+	
+	//display final result
+	
+	public void display_pascalT(){
+		this.GenerateFirstRow();
+		this.PInTriangle();
+		this.getResult();
+		
+	
+	
+	} 
+	
+	
+	
+}
+
+
+public class Pascaltriangle {
+
+	public static void main(String[] args) {
+		Scanner ob=new Scanner(System.in);
+		out.println("Enter the row: ");
+		int row=ob.nextInt();	        
+		 	
+
+      
+		
+		
+	}
+
+}

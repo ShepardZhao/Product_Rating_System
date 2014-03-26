@@ -1,0 +1,87 @@
+/**
+* This Servlet is implement initialing function 
+* 
+*
+* @author  xun zhao
+* @version 1.0
+* @since   2014-03-21
+*/
+package com.Controller;
+import java.util.*;
+
+import org.json.simple.*;
+
+import static java.lang.System.*;
+
+//Declare the class
+public class Controller {
+	private String[] ProductionList;
+	private HashMap<String,String> map = new HashMap<String,String>();
+	private List<String>  l1 = new LinkedList<String>();
+
+
+
+	//default constructor 
+	public Controller(String[] ProductionList){
+	//constructor fetch info of products
+		this.ProductionList = ProductionList;	
+	}
+
+	
+	
+	public String Returnsplit(){
+		for(int i=0;i<ProductionList.length;i++){	
+			l1.add(Setkey(ProductionList[i].split(",")));
+		}
+		
+		return JSONValue.toJSONString(li);
+
+	}
+	
+	//set key for each function
+	private String Setkey(String[] string){
+		for(int x=0;x<string.length;x++){
+			if(x==0){
+				map.put("id", string[x]);
+			}
+			if(x==1){
+				map.put("name",string[x]);
+			}
+			if(x==2){
+				map.put("price",string[x]);
+			}
+			if(x==3){
+				map.put("img",string[x]);
+			}
+			if(x==4){
+				map.put("color",string[x]);
+
+			}
+			if(x==5){
+				map.put("processor",string[x]);
+
+			}
+			if(x==6){
+				map.put("momery",string[x]);
+
+			}
+			if(x==7){
+				map.put("storage",string[x]);
+			}
+		}
+		
+
+		
+		
+	}
+
+
+	
+	
+	
+	
+	
+	
+	
+
+}

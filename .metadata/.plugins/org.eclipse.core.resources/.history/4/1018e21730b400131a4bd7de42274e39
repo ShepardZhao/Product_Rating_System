@@ -1,0 +1,82 @@
+package com.Content;
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.*;
+import java.util.*;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.Content.*;
+import com.Controller.*;
+/**
+ * Servlet implementation class Controller
+ */
+public class DetailPage extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public DetailPage() {
+        super();
+
+        // TODO Auto-generated constructor stub
+    }
+
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+
+		RequestDispatcher view = request.getRequestDispatcher("/DetailPage.jsp");
+		view.forward(request,response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	@SuppressWarnings({ "unchecked", "unchecked" })
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		HttpSession session = request.getSession(true);
+		//get parameter by AJAX
+		String ProID = request.getParameter("pid");
+		String RatingType =request.getParameter("rt");
+		
+		//new object
+		RatingController ratingController = new RatingController(session,request,response,ProID,RatingType);
+
+		//set user session
+		session.setAttribute("UserSession", ratingController.UserSession("UserSession",(Map<String,Integer>) session.getAttribute("UserSession")));
+		
+		
+		
+		getServletContext().setAttribute("GlobalRating",ratingController.SetGobalSession((HashMap<String,HashMap<Integer,Integer>>) getServletContext().getAttribute("GlobalRating")));
+
+		
+		 response.setContentType("text/html");
+	        PrintWriter printWriter  = response.getWriter();
+	        printWriter.println("sfesf");
+		
+		
+		
+			
+    	
+		
+		
+		
+	}
+
+}

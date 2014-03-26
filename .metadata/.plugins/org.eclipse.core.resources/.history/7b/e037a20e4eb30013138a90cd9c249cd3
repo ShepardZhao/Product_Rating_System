@@ -1,0 +1,55 @@
+package com.Controller;
+import javax.servlet.http.*;
+import java.security.SecureRandom;
+
+import java.math.BigInteger;
+import java.util.*;
+
+public class SessionController {
+	public HttpSession session;
+	public String userSession;
+	
+	public SessionController(HttpSession session){
+		
+		this.session = session;
+		
+	}
+	
+	//set User Session for current browser 
+	public void SetUserSessionName(){
+		if(this.CheckUserSession()){
+		
+		}
+		else{
+			this.session.setAttribute("userSession", this.GenerateUserName());
+
+		}
+		
+	}
+	
+	//Generate randomly user once there is no user exist 
+	private String GenerateUserName(){
+		return new BigInteger(130, new SecureRandom()).toString(32);
+	}
+	
+	
+	
+	//Check current user session whether empty
+	
+	public boolean CheckUserSession(){
+		if(null!=this.session.getAttribute("userSession")){
+			return true;
+		}
+		else{
+			return false;
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+
+}

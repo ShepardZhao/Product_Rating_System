@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>Product_Rating_System</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+   <servlet>
+      <servlet-name>InitalPage</servlet-name>
+      <servlet-class>com.Content</servlet-class>   
+      <init-param>   
+        <param-name>ProductListNumber</param-name>   
+        <param-value>1,2,3,4</param-value>
+    </init-param>   
+    
+    <init-param>   
+        <param-name>ProductListName</param-name>   
+        <param-value>Samsung Galaxy S5 4G LTE SM-G900,Sony Xperia SP C5302 (White),Samsung Galaxy S4 4G LTE i9506 (16GB-White),Apple iPhone 5c (16GB-White)</param-value>
+    </init-param> 
+    
+    
+    <init-param>   
+        <param-name>ProductListPrice</param-name>   
+        <param-value>$722,$633,$534,$675</param-value>
+    </init-param> 
+    
+    
+    <init-param>   
+        <param-name>ProductListImage</param-name>   
+        <param-value>samsung-galaxy-s5.jpg,sony-xperia-sp-c5303-white.jpg,samsung-galaxy-s4.jpg,apple-iphone-5c</param-value>
+    </init-param> 
+    
+  </servlet>
+  
+  
+  
+
+
+<servlet-mapping>
+    <servlet-name>com.Content.InitalPage</servlet-name>
+    <url-pattern>/ProductList</url-pattern>   
+</servlet-mapping>
+
+  
+  
+  
+  
+</web-app>

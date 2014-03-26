@@ -1,0 +1,11 @@
+package com.Controller;
+import javax.servlet.http.*;
+
+import java.util.*;
+
+public class SessionController {
+	public HttpSession session;
+;
+	
+
+}

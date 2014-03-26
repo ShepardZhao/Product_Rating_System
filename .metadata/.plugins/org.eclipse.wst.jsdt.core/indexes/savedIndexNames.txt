@@ -1,9 +1,7 @@
 INDEX VERSION 1.3+/Users/zhaoxun321/University of Sydney/COMP5347/Assignment1/Product_Rating_System/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
 2484187819.index
-2902281721.index
 2953761967.index
 1089740434.index
-4124796570.index
 3580029270.index
-1771562349.index
 2724262402.index
+1771562349.index

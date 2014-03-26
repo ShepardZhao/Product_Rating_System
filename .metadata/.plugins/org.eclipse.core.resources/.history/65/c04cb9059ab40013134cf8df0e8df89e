@@ -1,0 +1,77 @@
+import java.util.*;
+
+import static java.lang.System.*;
+
+class TwoDimensional{
+	private final int row_x;
+	private final int row_y;
+	private int sum_row;
+	private int[][] array;
+	TwoDimensional(int row_x, int row_y){
+		this.row_x = row_x;
+		this.row_y = row_y;
+		this.array = new int[this.row_x][this.row_y];
+	}
+	
+	
+	
+	public void SetValueForArray(int value){
+		for (int x=0;x<this.array.length;x++){
+			
+			
+		}
+		
+		
+	}
+	
+	public void ShowColSum(){
+		for (int row=0;row<this.array.length;row++){
+			this.sum_row=0;
+			for(int col=0;col<this.array[row].length;col++){
+				this.sum_row+=this.array[row][col];
+			}
+		
+			out.println("The sum of this row: " + (row+1)+"is: "+ this.sum_row);
+		}
+		
+	}
+	
+	
+	public void ShowRowSum(){
+		
+		
+		
+	}
+
+	
+	
+}
+
+public class ColumnandRowSums {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		Scanner ob=new Scanner(System.in);
+		out.println("Enter the row number: ");
+		int row=ob.nextInt();
+		out.println("Enter the col number: ");
+		int col=ob.nextInt();
+		TwoDimensional twoDimensional = new TwoDimensional(row,col);
+
+		for (int x=0; x<row;x++){
+			
+			out.println("Please input row, number " + x + "and you are allowed "+ col + " elements per row");
+			
+			
+
+			
+			
+		}
+	
+		
+		
+	}
+
+}

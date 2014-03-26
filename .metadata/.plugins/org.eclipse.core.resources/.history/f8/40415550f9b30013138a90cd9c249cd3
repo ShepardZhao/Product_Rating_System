@@ -1,0 +1,87 @@
+package com.Controller;
+import javax.servlet.http.*;
+import org.json.simple.*;
+
+import org.apache.tomcat.util.http.Cookies;
+
+import java.security.SecureRandom;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.math.BigInteger;
+import java.util.*;
+
+public class SessionCookieController {
+	protected HttpSession session;
+	protected HttpServletResponse response;
+	public Cookie cookie;
+	public String userSession;
+	public SessionCookieController(){};
+	public SessionCookieController(HttpSession session, HttpServletResponse response){
+		this.session = session;
+		this.response = response;
+		this.SetCookie();
+	}
+	
+	
+	private void SetCookie(){
+		this.cookie = new Cookie("voteCookie",null); 
+		this.cookie.setMaxAge(60*60*24); 
+		this.response.addCookie(cookie);
+
+	}
+	
+	
+	//check the session --1
+	protected boolean CheckCookie(){
+		if(null == this.cookie.getValue()){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+	
+	
+	
+	//Set session only -2
+	protected void ReSetCookie(HashMap<String, HashMap<Integer, Integer>> hashMap){
+		cookie.setValue(JSONValue.toJSONString(hashMap));;
+	}
+	
+	 
+	
+
+	
+	
+	//Check current user session whether empty
+	
+	protected boolean CheckSession_name(String name){
+		if(null!=(String)this.session.getAttribute(name)){
+			return true;
+		}
+		else{
+			return false;
+		}
+		
+	}
+	
+	
+	//get session by name
+	@SuppressWarnings("unchecked")
+	protected HashMap<String,HashMap<Integer,Integer>> getSessionName(String name){
+		
+		return (HashMap<String, HashMap<Integer, Integer>>) this.session.getAttribute(name);
+		
+		
+	}
+
+	
+	
+	//remove session by name
+	protected void RemoveSession(String SessionName){
+		this.session.removeAttribute(SessionName);
+	}
+	
+
+}

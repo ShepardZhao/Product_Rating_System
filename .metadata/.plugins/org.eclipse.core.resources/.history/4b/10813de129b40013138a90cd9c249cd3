@@ -1,0 +1,53 @@
+package com.Controller;
+import javax.servlet.http.*;
+import org.json.simple.*;
+
+import org.apache.tomcat.util.http.Cookies;
+
+import java.security.SecureRandom;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.math.BigInteger;
+import java.util.*;
+
+public class SessionController {
+	protected HttpSession session;
+	public String userSession;
+	public SessionController(){};
+	public SessionController(HttpSession session){
+		this.session = session;
+	}
+	
+
+	
+	//Set session only -2
+	protected void ReSetCookie(HashMap<String, HashMap<Integer, Integer>> hashMap){
+	}
+	
+	 
+	protected boolean CheckSession(List<String,Integer> list){
+		if(this.session.getAttribute())
+		
+	}
+
+	
+	
+
+	//get session by name
+	@SuppressWarnings("unchecked")
+	protected HashMap<String,HashMap<Integer,Integer>> getSessionName(String name){
+		
+		return (HashMap<String, HashMap<Integer, Integer>>) this.session.getAttribute(name);
+		
+		
+	}
+
+	
+	
+	//remove session by name
+	protected void RemoveSession(String SessionName){
+		this.session.removeAttribute(SessionName);
+	}
+	
+
+}

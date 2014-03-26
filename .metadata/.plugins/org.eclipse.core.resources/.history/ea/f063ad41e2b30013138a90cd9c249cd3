@@ -1,0 +1,71 @@
+package com.Controller;
+import javax.servlet.http.*;
+
+
+import java.security.SecureRandom;
+import java.math.BigInteger;
+import java.util.*;
+
+public class SessionCookieController {
+	protected HttpSession session;
+	protected Cookie cookie;
+	public String userSession;
+	public SessionCookieController(){};
+	public SessionCookieController(HttpSession session){
+		
+		this.session = session;
+	}
+	
+	
+	//check the session --1
+	protected boolean CheckSession(String name){
+		if(null == this.session.getAttribute(name)){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+	
+	
+	
+	//Set session only -2
+	protected void SetCookie(String name, HashMap<String, HashMap<Integer, Integer>> hashMap){
+			this.session.setAttribute(name,hashMap);
+	}
+	
+
+	
+	
+	//Check current user session whether empty
+	
+	protected boolean CheckSession_name(String name){
+		if(null!=(String)this.session.getAttribute(name)){
+			return true;
+		}
+		else{
+			return false;
+		}
+		
+	}
+	
+	
+	//get session by name
+	@SuppressWarnings("unchecked")
+	protected HashMap<String,HashMap<Integer,Integer>> getSessionName(String name){
+		
+		return (HashMap<String, HashMap<Integer, Integer>>) this.session.getAttribute(name);
+		
+		
+	}
+
+	
+	
+	//remove session by name
+	protected void RemoveSession(String SessionName){
+		this.session.removeAttribute(SessionName);
+	}
+	
+
+}

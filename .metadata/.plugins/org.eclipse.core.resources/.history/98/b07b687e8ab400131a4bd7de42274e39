@@ -1,0 +1,39 @@
+import java.util.*;
+import static java.lang.System.*;
+
+public class Pascaltriangle {
+
+	public static void main(String[] args) {
+		 System.out.println("\nTriangle: ");
+	        
+		 
+		 	
+	        long[][] triangle = new long[row][row];
+	        int x = 1;        
+	        while (x<row-1) {
+	            System.out.print(" ");
+	            x++;
+	        }
+	        triangle[1][1] = 1;
+	        System.out.print(triangle[1][1] + "\n");
+
+	        for (int i = 2; i<row; i++) {
+	            x = i;
+	            while (x<row-1) {
+	                System.out.print(" ");
+	                x++;
+	            }
+	            for (int n = 1; n<row; n++) {
+	                triangle[i][n] = triangle[i-1][n-1] + triangle[i-1][n];
+	                if (triangle[i][n]>0) {
+	                    System.out.print(triangle[i][n] + " ");
+	                }
+	            }
+	            System.out.println();
+	        }        
+		
+		
+		
+	}
+
+}

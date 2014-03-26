@@ -1,0 +1,69 @@
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static java.lang.System.*;
+
+class Spot{
+	private String getString;
+	private final String C_regEx="^[A-Z]+$"; //
+	private final String S_regEx="^[a-z]+$";
+	private char[] smallLetter = new char[26];
+	private char[] CapLetter = new char[26];
+	private Map<String, Integer> C_map = new HashMap<String, Integer>();
+	
+	public Spot(String string) {
+		this.getString = string;	
+	}
+
+	
+	
+	
+
+	public void display(){
+		Pattern p=Pattern.compile(C_regEx);
+		char[] tmp = this.charAt();
+
+		for (int x=0; x<tmp.length;x++){
+			Matcher m=p.matcher(Character.toString(tmp[x]));
+			if(m.find()){
+				this.IncreaseNumber(C_map, Character.toString(tmp[x]));
+			}
+		}
+		
+	} 
+	
+	
+	
+	
+	private void IncreaseNumber(Map<String, Integer> map, String getstring){
+		if(map.containsKey(getstring)){
+			map.put(getstring, map.get(getstring)+1);
+		}
+		else{
+			map.put(getstring,1);
+		}
+	}
+	
+	
+	
+	//return to char array
+	private char[] charAt(){
+		return this.getString.toCharArray();
+	}
+
+	
+}
+
+
+public class CaseSeninput {
+
+	public static void main(String[] args) {
+		Spot spot = new Spot(args[0]);
+		
+		
+		
+		
+	}
+
+}

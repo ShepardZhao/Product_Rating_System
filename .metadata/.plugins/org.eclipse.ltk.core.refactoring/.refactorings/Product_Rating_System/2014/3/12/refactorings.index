@@ -1,2 +1,12 @@
 1395136718356	Move 1 resources to 'WebContent'
 1395147467146	Delete element
+1395379173643	Rename package 'com.rating'
+1395381709477	Move compilation units
+1395381719910	Move compilation unit
+1395381728886	Move compilation unit
+1395381763239	Rename type 'Rating'
+1395381903589	Rename package 'com.controller'
+1395455488863	Rename resource 'index.jsp'
+1395483511465	Infer generic type arguments
+1395491546977	Rename resource 'Detail.jsp'
+1395492798011	Delete element
